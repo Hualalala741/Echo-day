@@ -19,10 +19,7 @@ export default function CalendarView({ entries, year, month }: Props) {
   /** 仅悬停某天时再加载该日大图，避免首屏拉取全部日记原图 */
   const [hoveredDay, setHoveredDay] = useState<number | null>(null);
   const [today,setToday] = useState<Date|null>(null);
-  console.log('[CalendarView] new Date():', new Date().toString())
-  console.log('[CalendarView] 运行环境:', typeof window === 'undefined' ? 'SERVER' : 'CLIENT')
-console.log('[CalendarView] TZ env:', typeof window === 'undefined' ? process.env.TZ : 'N/A')
-
+  
   useEffect(()=>{
     setToday(new Date());
   },[]);
