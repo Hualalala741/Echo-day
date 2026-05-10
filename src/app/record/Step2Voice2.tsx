@@ -128,6 +128,9 @@ export default function Step2Voice2({ draft, aiLang, saveDraft,initalMessages, o
       });
       if(!res.ok) throw new Error("Chat failed");
 
+      // 先占位一条助手消息，便于在气泡内展示 status / 思考文案
+      yield { content: [{ type: "text", text: "" }] };
+
       // ---读取流---
       const reader = res.body!.getReader();
       const decoder = new TextDecoder();
