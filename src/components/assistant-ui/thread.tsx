@@ -1,3 +1,4 @@
+import { useAssistantThinkingOptional } from "@/components/assistant-ui/assistant-thinking-context";
 import {
   ComposerAddAttachment,
   ComposerAttachments,
